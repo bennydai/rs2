@@ -13,7 +13,7 @@ services:
       - QT_X11_NO_MITSHM=1
     extra_hosts:
       - "benny-HP-EliteBook-840-G5.local:127.0.0.1"
-      - "raspberrypi.local:10.42.0.103"
+      - "raspberrypi.local:172.17.0.1"
     network_mode: host
     command: bash
     privileged: true
@@ -21,7 +21,7 @@ services:
   raspberrypi: 
     image: ros-duckiebot-raspberry-pi
     extra_hosts:
-      - "benny-HP-Elitebook-840-G5.local:10.42.0.1"
+      - "benny-HP-Elitebook-840-G5.local:127.0.1.1"
       - "raspberrypi.local:127.0.0.1"
     entrypoint: "/usr/local/bin/docker-entrypoint.sh"
     network_mode: host
