@@ -7,13 +7,13 @@ services:
       - "/tmp/.X11-unix:/tmp/.X11-unix"
     environment:
       - "ROS_MASTER_URI=http://raspberrypi.local:11311/"
-      - "ROS_HOSTNAME=benny-HP-EliteBook-840-G5.local"
+      - "ROS_HOSTNAME=benny-HP-Elitebook-840-G5.local"
       - "PYTHONUNBUFFERED=1"
       - DISPLAY=$DISPLAY
       - QT_X11_NO_MITSHM=1
     extra_hosts:
-      - "benny-HP-EliteBook-840-G5.local:127.0.0.1"
-      - "raspberrypi.local:172.17.0.1"
+      - "benny-HP-Elitebook-840-G5.local:127.0.1.1"
+      - "raspberrypi.local:10.42.0.176"
     network_mode: host
     command: bash
     privileged: true
@@ -21,7 +21,7 @@ services:
   raspberrypi: 
     image: ros-duckiebot-raspberry-pi
     extra_hosts:
-      - "benny-HP-Elitebook-840-G5.local:192.168.2.2"
+      - "benny-HP-Elitebook-840-G5.local:10.42.0.1"
       - "raspberrypi.local:127.0.1.1"
     entrypoint: "/usr/local/bin/docker-entrypoint.sh"
     network_mode: host
