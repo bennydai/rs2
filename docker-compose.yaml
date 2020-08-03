@@ -3,6 +3,23 @@ version: '3.7'
 services:
   laptop:
     image: duckielaptop
+    environment:
+      - "ROS_MASTER_URI=http://raspberrypi.local:11311/"
+      - "ROS_HOSTNAME=benny-HP-Elitebook-840-G5.local"
+      - "PYTHONUNBUFFERED=1"
+      - QT_X11_NO_MITSHM=1
+      - DISPLAY=$DISPLAY
+    volumes: 
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+    extra_hosts:
+      - "benny-HP-Elitebook-840-G5.local:127.0.1.1"
+      - "raspberrypi.local:10.42.0.176"
+    network_mode: host
+    command: rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=0.25
+    privileged: true
+
+  rviz:
+    image: duckielaptop
     volumes:
       - "/tmp/.X11-unix:/tmp/.X11-unix"
     environment:
