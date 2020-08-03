@@ -13,7 +13,7 @@ services:
       - "/tmp/.X11-unix:/tmp/.X11-unix"
     extra_hosts:
       - "benny-HP-Elitebook-840-G5.local:127.0.1.1"
-      - "raspberrypi.local:10.42.0.176"
+      - "raspberrypi.local:10.42.0.103"
     network_mode: host
     command: rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=0.25
     privileged: true
@@ -30,7 +30,7 @@ services:
       - QT_X11_NO_MITSHM=1
     extra_hosts:
       - "benny-HP-Elitebook-840-G5.local:127.0.1.1"
-      - "raspberrypi.local:10.42.0.176"
+      - "raspberrypi.local:10.42.0.103"
     network_mode: host
     command: bash
     privileged: true
@@ -38,7 +38,7 @@ services:
   raspberrypi: 
     image: ros-duckiebot-raspberry-pi
     extra_hosts:
-      - "benny-HP-Elitebook-840-G5.local:10.42.1.1"
+      - "benny-HP-Elitebook-840-G5.local:10.42.0.1"
       - "raspberrypi.local:127.0.1.1"
     volumes:
       - "/home/pi/ros-duckiebot-raspberry-pi/calibrations:/root/duckiefleet/calibrations"
