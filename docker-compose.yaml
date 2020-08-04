@@ -41,7 +41,7 @@ services:
       - "benny-HP-Elitebook-840-G5.local:196.168.2.2"
       - "raspberrypi.local:127.0.1.1"
     volumes:
-      - "/home/pi/ros-duckiebot-raspberry-pi/calibrations:/root/duckiefleet/calibrations"
+      - "/home/pi/calibrations:/root/duckiefleet/calibrations"
     entrypoint: "/usr/local/bin/docker-entrypoint.sh"
     network_mode: host
     privileged: true
