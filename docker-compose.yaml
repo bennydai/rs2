@@ -9,11 +9,11 @@ services:
       - "PYTHONUNBUFFERED=1"
       - QT_X11_NO_MITSHM=1
       - DISPLAY=$DISPLAY
-    volumes: 
+    volumes:
       - "/tmp/.X11-unix:/tmp/.X11-unix"
     extra_hosts:
       - "benny-HP-Elitebook-840-G5.local:127.0.1.1"
-      - "raspberrypi.local:10.42.0.103"
+      - "raspberrypi.local:192.168.2.163"
     network_mode: host
     command: rosrun teleop_twist_keyboard teleop_twist_keyboard.py _speed:=0.25
     privileged: true
@@ -30,18 +30,18 @@ services:
       - QT_X11_NO_MITSHM=1
     extra_hosts:
       - "benny-HP-Elitebook-840-G5.local:127.0.1.1"
-      - "raspberrypi.local:10.42.0.103"
+      - "raspberrypi.local:192.168.2.163"
     network_mode: host
     command: bash
     privileged: true
 
-  raspberrypi: 
+  raspberrypi:
     image: ros-duckiebot-raspberry-pi
     extra_hosts:
-      - "benny-HP-Elitebook-840-G5.local:10.42.0.1"
+      - "benny-HP-Elitebook-840-G5.local:196.168.2.2"
       - "raspberrypi.local:127.0.1.1"
-        #volumes:
-            #  - "/home/pi/ros-duckiebot-raspberry-pi/calibrations:/root/duckiefleet/calibrations"
+    volumes:
+      - "/home/pi/ros-duckiebot-raspberry-pi/calibrations:/root/duckiefleet/calibrations"
     entrypoint: "/usr/local/bin/docker-entrypoint.sh"
     network_mode: host
     privileged: true
