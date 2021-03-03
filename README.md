@@ -31,3 +31,6 @@ environment:
 
 ## Wheel Calibration
 There are some notes if you refer to `calib/wheel/`.
+
+## References
+For further references on how I figured out most of this - the tutorial from Open Source Robotics Foundation is [here](http://wiki.ros.org/es/docker)
